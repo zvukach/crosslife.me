@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/catalog', ['App\Http\Controllers\Api\ProductsController', 'index'])->name('products.index');
+Route::post('/create-order', ['App\Http\Controllers\Api\OrdersController', 'store'])->name('orders.store');
+Route::post('/approve-order ', ['App\Http\Controllers\Api\OrdersController', 'approveOrder'])->name('orders.approve-order');
