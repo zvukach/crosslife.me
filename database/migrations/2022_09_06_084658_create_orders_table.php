@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('status_code');
             $table->string('order_number')->unique();
             $table->json('products');
